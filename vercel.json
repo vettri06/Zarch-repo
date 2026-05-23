@@ -1,0 +1,45 @@
+{
+  "rewrites": [
+    {
+      "source": "/zarch-repo.db",
+      "destination": "/zarch-repo.db.tar.gz"
+    },
+    {
+      "source": "/zarch-repo.files",
+      "destination": "/zarch-repo.files.tar.gz"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*).pkg.tar.zst",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/octet-stream"
+        },
+        {
+          "key": "Content-Disposition",
+          "value": "attachment"
+        }
+      ]
+    },
+    {
+      "source": "/(.*).db.tar.gz",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/gzip"
+        }
+      ]
+    },
+    {
+      "source": "/(.*).files.tar.gz",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/gzip"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zarch Repository — Custom Arch Linux Package Repository</title>
+  <meta name="description" content="Zarch is a custom Arch Linux package repository featuring curated packages including Calamares, Bun, Astal, mkinitcpio, and more. Add the repo to pacman and install packages instantly.">
+  <meta name="keywords" content="arch linux, pacman, custom repository, zarch, packages, calamares, bun, mkinitcpio, astal">
+  <meta name="theme-color" content="#07090e">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>📦</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Background Effects -->
+  <div class="bg-glow"></div>
+  <div class="bg-grid"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-logo">Z</div>
+      <div>
+        <div class="navbar-title">Zarch</div>
+        <div class="navbar-subtitle">Package Repository</div>
+      </div>
+    </div>
+    <div class="navbar-links">
+      <a href="#packages" class="navbar-link active">Packages</a>
+      <a href="#setup" class="navbar-link">Setup</a>
+      <a href="https://github.com/vettri06/Zarch-repo" target="_blank" rel="noopener" class="navbar-link">GitHub</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      Repository Online
+    </div>
+    <h1>
+      The <span class="gradient-text">Zarch</span><br>
+      Package Repository
+    </h1>
+    <p class="hero-desc">
+      A curated collection of custom and patched Arch Linux packages.
+      Add this repository to your <code style="font-family: var(--font-mono); background: rgba(56,189,248,0.1); padding: 0.1em 0.4em; border-radius: 4px; font-size: 0.9em; color: var(--accent-blue);">pacman.conf</code> and install packages instantly.
+    </p>
+    <div class="hero-stats animate-in animate-delay-2">
+      <div class="stat">
+        <span class="stat-value" id="stat-packages">—</span>
+        <span class="stat-label">Packages</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="stat-size">—</span>
+        <span class="stat-label">Total Size</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="stat-archs">—</span>
+        <span class="stat-label">Architectures</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Setup Section -->
+  <section class="section" id="setup">
+    <div class="section-header animate-in">
+      <div class="section-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 1 1 3 3L7 19l-4 1 1-4z"/></svg>
+        Quick Setup
+      </div>
+      <h2 class="section-title">Add to Pacman</h2>
+      <p class="section-desc">Append this block to <code style="font-family: var(--font-mono); color: var(--accent-blue);">/etc/pacman.conf</code> then run <code style="font-family: var(--font-mono); color: var(--accent-cyan);">sudo pacman -Sy</code></p>
+    </div>
+
+    <div class="config-card animate-in animate-delay-1">
+      <div class="config-card-header">
+        <div class="config-card-header-left">
+          <div class="config-card-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <span class="config-card-filename">pacman.conf</span>
+        </div>
+        <button class="btn-copy" id="btn-copy-config" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copy
+        </button>
+      </div>
+      <div class="config-card-body">
+        <pre id="config-code"></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Packages Section -->
+  <section class="section" id="packages">
+    <div class="section-header animate-in">
+      <div class="section-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16.5 9.4-9-5.19"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        Available Packages
+      </div>
+      <h2 class="section-title">Browse Packages</h2>
+      <p class="section-desc">Search, filter, and download packages from the repository</p>
+    </div>
+
+    <!-- Search -->
+    <div class="search-bar-wrapper animate-in animate-delay-1">
+      <span class="search-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </span>
+      <input type="text" class="search-bar" id="search-input" placeholder="Search packages by name, version, or description…" autocomplete="off" spellcheck="false">
+      <span class="search-count" id="search-count"></span>
+    </div>
+
+    <!-- Filter Chips -->
+    <div class="filter-chips animate-in animate-delay-2">
+      <button class="filter-chip active" data-arch="all" type="button">All</button>
+      <button class="filter-chip" data-arch="x86_64" type="button">x86_64</button>
+      <button class="filter-chip" data-arch="any" type="button">any</button>
+    </div>
+
+    <!-- Package Grid -->
+    <div class="package-grid" id="package-grid">
+      <!-- Rendered by JS -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <span class="footer-text">
+      Zarch Repository — Built with ❤️ for the Arch Linux community
+    </span>
+    <div class="footer-links">
+      <a href="https://github.com/vettri06/Zarch-repo" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://wiki.archlinux.org/title/Unofficial_user_repositories" target="_blank" rel="noopener">Arch Wiki</a>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+    <span class="toast-message"></span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
